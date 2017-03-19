@@ -1,0 +1,72 @@
+function box() { t="$1xxxx";c=${2:-=}; echo ${t//?/$c}; echo "$c $1 $c"; echo ${t//?/$c}; }
+
+function lcd { 
+    cd "$@" && ls; 
+}
+
+function jump { 
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+
+function jumpls { 
+    cd -P "$MARKPATH/$1" && ls 2>/dev/null || echo "No such mark: $1"
+}
+
+function mark { 
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark { 
+    rm -if "$MARKPATH/$1"
+}
+function marks {
+    ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
+}
+
+function unmarkall {
+  for i in `marks  | awk -F" " '{print $2}'`
+  do
+  unmark $i
+  done
+}
+
+function _completemarks {
+  reply=($(ls $MARKPATH))
+}
+
+compctl -K _completemarks jump
+compctl -K _completemarks unmark
+
+mcd () {
+  mkdir "$1"
+  cd "$1"
+}
+
+cleanproj (){
+  find . -type f -name '*.jpeg' -exec xattr -c {}  \;
+  find . -type f -name '*.png' -exec xattr -c {} \;
+  find . -type f -name '*.tif' -exec xattr -c {} \;
+}
+
+gito () {
+  git branch "$1"
+  git checkout "$1"
+}
+
+gitq () {
+  git add .
+  git commit -m $1
+}
+
+ds () {
+  du -s * | sort -n
+}
+
+newday () {
+  jump today 
+  unmark today -y
+  cd ~/Workspace/diary
+  mkdir  "$1"
+  cd  "$1"
+  mark "$1" .
+  mark today .
+}
