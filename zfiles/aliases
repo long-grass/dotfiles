@@ -1,12 +1,15 @@
 ###############general file system stuff####################
 
 alias showspace="du -s * | sort -n"
-alias makespace='find . -name "node_modules" -type d -exec rm -rf '{}' +' #removes all node_modules directories, to clear up some space
+alias makespace='xcrun simctl delete unavailable && find . -name "node_modules" -type d -exec rm -rf '{}' +' #removes all node_modules directories, to clear up some space
 alias openlast="subl `ls -tr |tail -1`"
 alias gotolast="cd `ls -tr |tail -1`"
 alias hist="history | grep" # use like hist rails
 alias openz="code ~/.zshrc"
+alias opena="code ~/dotfiles/zfiles/aliases"
+alias openf="code ~/dotfiles/zfiles/functions"
 alias sourcez="source ~/.zshrc"
+alias trash="rm -rf $1"
 alias vs="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias html="mv *htm index.html"
 
@@ -15,10 +18,12 @@ alias showdesk='defaults write com.apple.finder CreateDesktop -bool true; killal
 alias lock="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
 
 alias start="python -m SimpleHTTPServer 8000 && /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-
+alias letsgo="vs . && npm start"
 alias tryit="ping 8.8.8.8" # check internet/dns
 
 alias blog="open ./_posts/"
+
+
 
 ####################git shortcuts#############
 

@@ -49,4 +49,8 @@ export VAGRANT_HOME="/Volumes/s128/vagrant_home"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
+bindkey "^U" backward-kill-line
 
+bindkey "^X\\x7f" backward-kill-line
+
+bindkey "^X^_" redo

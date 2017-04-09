@@ -1,3 +1,7 @@
+function whitespace () {
+  tr -s " " < $1 | tee $1
+}
+
 function box() { t="$1xxxx";c=${2:-=}; echo ${t//?/$c}; echo "$c $1 $c"; echo ${t//?/$c}; }
 
 function lcd { 
@@ -39,6 +43,10 @@ compctl -K _completemarks unmark
 mcd () {
   mkdir "$1"
   cd "$1"
+}
+
+grab () {
+  git clone $1
 }
 
 cleanproj (){
