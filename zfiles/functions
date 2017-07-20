@@ -2,6 +2,17 @@ function whitespace () {
   tr -s " " < $1 | tee $1
 }
 
+function jsx () {
+  for i in *.jsx
+    do mv  $i `ls $i |awk -F  'x' '{print $1}'`
+    done
+}
+
+function cow {
+  df -h 
+  du -sh ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2
+}
+
 function box() { t="$1xxxx";c=${2:-=}; echo ${t//?/$c}; echo "$c $1 $c"; echo ${t//?/$c}; }
 
 function lcd { 
@@ -10,6 +21,25 @@ function lcd {
 
 function jump { 
     cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+
+function unbindport {
+  echo "yes:$1"
+  docker ps -a | grep 0.0.0.0:$1| awk -F " "  '{print $1}' 
+  docker stop $(docker ps -a | grep 0.0.0.0:$1| awk -F " "  '{print $1}')
+  docker stop $(docker ps -a | grep $1| awk -F " "  '{print $1}')
+}
+
+function sc {
+  sed -n '/scripts/,$p' package.json |more
+}
+
+function pa {
+  sed -n '/dependencies/,$p' package.json |more
+}
+
+function golast {
+  cd `ls -tr |tail -1`
 }
 
 function jumpls { 
@@ -47,6 +77,8 @@ mcd () {
 
 grab () {
   git clone $1
+  cd `ls -tr|tail -1`
+  npm install
 }
 
 cleanproj (){

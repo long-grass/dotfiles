@@ -2,8 +2,8 @@
 
 alias showspace="du -s * | sort -n"
 alias howmuch="sudo du -sh /* | sort -n | grep  '[[:digit:]]G'"
-alias gspace="sudo du -sh * | sort -n | grep  '[[:digit:]]G'"
-alias mspace="sudo du -sh * | sort -n | grep  '[[:digit:]]M'"
+alias gspace="sudo du -sh .* | sort -n | grep  '[[:digit:]]G'"
+alias mspace="sudo du -sh .* | sort -n | grep  '[[:digit:]]M'"
 alias makespace='xcrun simctl delete unavailable && find . -name "node_modules" -type d -exec rm -rf '{}' +' #removes all node_modules directories, to clear up some space
 alias openlast="subl `ls -tr |tail -1`"
 alias gotolast="cd `ls -tr |tail -1`"
@@ -15,6 +15,11 @@ alias sourcez="source ~/.zshrc"
 alias trash="rm -rf $1"
 alias vs="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias html="mv *htm index.html"
+alias re="more README.md"
+alias hos="sudo vi /etc/hosts"
+alias ok="df -h"
+alias youtube="/usr/local/bin/mpsyt"
+
 
 alias hidedesk='defaults write com.apple.finder CreateDesktop -bool false; killall Finder;'
 alias showdesk='defaults write com.apple.finder CreateDesktop -bool true; killall Finder;'
@@ -26,7 +31,7 @@ alias tryit="ping 8.8.8.8" # check internet/dns
 
 alias blog="open ./_posts/"
 
-
+alias make='make -s'
 
 ####################git shortcuts#############
 
@@ -52,7 +57,10 @@ alias phx="mix phoenix.server"
 alias ionicrun="ionic run ios --device -l -c -s"
 
 
+####################docker shortcuts#############
 
+alias dockeru='eval "$(docker-machine env default)"'
+alias unbind="docker stop $(docker ps -a | grep 0.0.0.0:80 | awk -F " "  '{print $1}')"
 
 
 

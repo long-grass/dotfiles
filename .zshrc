@@ -36,16 +36,16 @@ if [ -f $HOME/.secrets/keys ]; then
 	source $HOME/.secrets/keys
 fi 
 
-export EDITOR='subl -w -n'
+export EDITOR='code'
 export PAGER='less -f'
 
 . `brew --prefix`/etc/profile.d/z.sh
 
-export PATH="$PATH:$HOME/.rvm/bin:/Users/garethrobertlee/.vimpkg/bin" # Add RVM to PATH for scripting
+# export PATH="$PATH:$HOME/.rvm/bin:/Users/garethrobertlee/.vimpkg/bin" # Add RVM to PATH for scripting
 
-export VAGRANT_HOME="/Volumes/s128/vagrant_home"
+#export VAGRANT_HOME="/Volumes/s128/vagrant_home"
 #export VAGRANT_HOME="/Users/garethrobertlee/vagrant/vagrant_home"
-
+export VAGRANT_HOME="/Volumes/vagrant/vagrant/vagrant_home"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
