@@ -14,7 +14,7 @@ else
   ZSH_THEME="cloud"
 fi
 
-sexport HISTFILE=~/.zsh_history
+export HISTFILE=~/.zsh_history
 
 setopt inc_append_history
 
