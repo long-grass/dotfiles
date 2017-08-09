@@ -52,7 +52,7 @@ alias ionicrun="ionic run ios --device -l -c -s"
 
 ####################    docker   ################
 
-alias unbind="docker stop $(docker ps -a | grep 0.0.0.0:80 | awk -F " "  '{print $1}')"
+#alias unbind="docker stop $(docker ps -a | grep 0.0.0.0:80 | awk -F " "  '{print $1}')"
 
 #####################   vagrant  ################
 
