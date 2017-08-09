@@ -33,14 +33,16 @@ fi
 export EDITOR='code'
 export PAGER='less -f'
 
-. `brew --prefix`/etc/profile.d/z.sh
+if [ `uname` == 'Darwin' ]
+  then
+  . `brew --prefix`/etc/profile.d/z.sh
+  export PATH=/usr/local/bin/:$PATH
+  export VAGRANT_HOME="~/vagrant/vagrant_home"
+  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+  fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+fi
 
-export PATH=/usr/local/bin/:$PATH
 
-export VAGRANT_HOME="~/vagrant/vagrant_home"
-
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
 bindkey "^U" backward-kill-line
 
