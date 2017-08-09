@@ -1,69 +1,131 @@
-function whitespace () {
+vrun () {
+  eval 'vagrant ssh -c'" \"${@:1} \""
+}
+
+vkill () {
+  vagrant global-status | grep running | cut -c 1-9 | while read line; do echo $line; vagrant suspend $line; done
+  cd 
+}
+ds () {
+  du -s * | sort -n
+}
+
+newday () {
+  jump today 
+  unmark today -y
+  cd ~/Workspace/diary
+  mkdir  "$1"
+  cd  "$1"
+  mark "$1" .
+  mark today .
+}
+
+whitespace () {
   tr -s " " < $1 | tee $1
 }
 
-function jsx () {
+help () {
+  set -e
+  if (( $# < 2 )); then
+    echo "Illegal number of parameters"   
+  fi
+  if [ "$1" = "add" ]; then
+    echo "$@" >> ~/dotfiles/helpfile
+  elif [ "$1" = "find" ]; then
+    grep $2 ~/dotfiles/helpfile
+  else
+   echo "#help add or help find"
+  fi
+}
+
+
+sc () {
+  sed -n '/scripts/,$p' package.json |more
+}
+
+pa () {
+  sed -n '/dependencies/,$p' package.json |more
+}
+
+gol () {
+  cd `ls -trd */ |tail -1`
+  ls
+  (($#)) && [ -f README.md ] && more README.md || echo ""
+}
+
+gof () {
+  cd `ls -trd */ |head -1`
+  ls
+  (($#)) && [ -f README.md ] && more README.md || echo ""
+}
+
+gito () {
+  git branch "$1"
+  git checkout "$1"
+}
+
+gitq () {
+  git add .
+  git commit -m $1
+}
+
+
+
+jsx () {
   for i in *.jsx
     do mv  $i `ls $i |awk -F  'x' '{print $1}'`
     done
 }
 
-function cow {
+cow () {
   df -h 
   du -sh ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2
 }
 
-function box() { t="$1xxxx";c=${2:-=}; echo ${t//?/$c}; echo "$c $1 $c"; echo ${t//?/$c}; }
+box () { t="$1xxxx";c=${2:-=}; echo ${t//?/$c}; echo "$c $1 $c"; echo ${t//?/$c}; }
 
-function lcd { 
+lcd () { 
     cd "$@" && ls; 
 }
 
-function jump { 
+gousb () {
+  df -h | grep Volumes| awk -F "Volumes/" '{print $2}'
+  cd /Volumes/$(df -h | grep Volumes| awk -F "Volumes/" '{print $2}')
+}
+
+jump () { 
     cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
 }
 
-function unbindport {
-  echo "yes:$1"
+unbindport () {
+  echo "unbinding:$1"
   docker ps -a | grep 0.0.0.0:$1| awk -F " "  '{print $1}' 
   docker stop $(docker ps -a | grep 0.0.0.0:$1| awk -F " "  '{print $1}')
   docker stop $(docker ps -a | grep $1| awk -F " "  '{print $1}')
 }
 
-function sc {
-  sed -n '/scripts/,$p' package.json |more
-}
-
-function pa {
-  sed -n '/dependencies/,$p' package.json |more
-}
-
-function golast {
-  cd `ls -tr |tail -1`
-}
-
-function jumpls { 
+jumpls () { 
     cd -P "$MARKPATH/$1" && ls 2>/dev/null || echo "No such mark: $1"
 }
 
-function mark { 
+mark () { 
     mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
 }
-function unmark { 
+unmark () { 
     rm -if "$MARKPATH/$1"
 }
-function marks {
+marks () {
     ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
 }
 
-function unmarkall {
+unmarkall () {
   for i in `marks  | awk -F" " '{print $2}'`
   do
   unmark $i
   done
 }
 
-function _completemarks {
+_completemarks () {
   reply=($(ls $MARKPATH))
 }
 
@@ -87,26 +149,5 @@ cleanproj (){
   find . -type f -name '*.tif' -exec xattr -c {} \;
 }
 
-gito () {
-  git branch "$1"
-  git checkout "$1"
-}
 
-gitq () {
-  git add .
-  git commit -m $1
-}
 
-ds () {
-  du -s * | sort -n
-}
-
-newday () {
-  jump today 
-  unmark today -y
-  cd ~/Workspace/diary
-  mkdir  "$1"
-  cd  "$1"
-  mark "$1" .
-  mark today .
-}
