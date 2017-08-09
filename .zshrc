@@ -8,10 +8,13 @@ setopt EXTENDED_HISTORY
 source ~/zfiles/aliases
 source ~/zfiles/functions
 
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
+if [ `uname` == 'Darwin' ]
+  ZSH_THEME="robbyrussell"
+else
+  ZSH_THEME="cloud"
+fi
 
-export HISTFILE=~/.zsh_history
+sexport HISTFILE=~/.zsh_history
 
 setopt inc_append_history
 
