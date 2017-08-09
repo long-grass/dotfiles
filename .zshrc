@@ -8,7 +8,7 @@ setopt EXTENDED_HISTORY
 source ~/zfiles/aliases
 source ~/zfiles/functions
 
-if [ `uname` == 'Darwin' ]
+if [ `uname` == 'Darwin' ] ; then
   ZSH_THEME="robbyrussell"
 else
   ZSH_THEME="cloud"
