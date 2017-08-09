@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-source $ZSH/oh-my-zsh.sh
+
 
 setopt EXTENDED_HISTORY 
 
@@ -33,7 +33,7 @@ fi
 export EDITOR='code'
 export PAGER='less -f'
 
-if [ `uname` == 'Darwin' ]
+if [ `uname` = 'Darwin' ]
   then
   . `brew --prefix`/etc/profile.d/z.sh
   export PATH=/usr/local/bin/:$PATH
@@ -42,7 +42,7 @@ if [ `uname` == 'Darwin' ]
   fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 fi
 
-
+source $ZSH/oh-my-zsh.sh
 
 bindkey "^U" backward-kill-line
 
