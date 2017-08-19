@@ -15,6 +15,17 @@ change-profile () { echo -e "\033]50;SetProfile=$1\a" }
 govm () {
   change-profile stretch
   vagrant ssh
+  change-profile v
+}
+
+cloud () {
+  change-profile $1
+  docker-machine ssh $1
+  change-profile v
+}
+
+ddm () {
+  docker-machine rm -y $1
 }
 
 newday () {
@@ -146,7 +157,7 @@ mcd () {
 
 grab () {
   git clone $1
-  cd `ls -tr|tail -1`
+  cd `echo $1 | awk -F "/" '{print $5}' | awk -F ".git" '{print $1}'`
   npm install
 }
 
@@ -154,6 +165,16 @@ cleanproj (){
   find . -type f -name '*.jpeg' -exec xattr -c {}  \;
   find . -type f -name '*.png' -exec xattr -c {} \;
   find . -type f -name '*.tif' -exec xattr -c {} \;
+}
+
+syncDotFiles (){
+  # Check if $1 is a git repository
+    stat "$1" > /dev/null || return 1;
+    cd $1; echo "Checking $PWD";
+    git status --porcelain || return 1; # A fatal error if $PWD is not a git repo
+    git add .
+    git commit -m "update dotfiles"
+    git push origin master
 }
 
 
