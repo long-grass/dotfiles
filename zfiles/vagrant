@@ -1,0 +1,25 @@
+alias coro='cd /Volumes/vagrant/vagrant/coreos-vagrant && vagrant up && vagrant ssh'
+alias showv='cd ~/vagrant/vagrant_home/boxes && du -sh * && cd -'
+alias addvuser='usermod -a -G docker vagrant'
+
+
+vrun () {
+  eval 'vagrant ssh -c'" \"${@:1} \""
+}
+
+vkill () {
+  vagrant global-status | grep running | cut -c 1-9 | while read line; do echo $line; vagrant suspend $line; done
+  cd 
+}
+
+govm () {
+  change-profile stretch
+  vagrant ssh
+  change-profile v
+}
+
+goyork (){
+  jump york
+  vagrant up
+  govm
+}

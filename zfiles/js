@@ -1,0 +1,24 @@
+
+alias dev="npm run dev"
+alias vip="vi package.json"
+
+
+jsx () {
+  for i in *.jsx
+    do mv  $i `ls $i |awk -F  'x' '{print $1}'`
+    done
+}
+
+grab () {
+  git clone $1
+  cd `echo $1 | awk -F "/" '{print $5}' | awk -F ".git" '{print $1}'`
+  npm install
+}
+
+sc () {
+  sed -n '/scripts/,$p' package.json |more
+}
+
+pa () {
+  sed -n '/dependencies/,$p' package.json |more
+}

@@ -1,0 +1,128 @@
+scarper (){
+  pkill -9 Electron
+  sleep 1
+  unmark latest
+  mark latest .
+  cd
+  diskutil unmount /dev/disk2s1
+}
+
+
+ds () {
+  du -s * | sort -n
+}
+
+lcd () { 
+    cd "$@" && ls; 
+}
+
+gousb () {
+  df -h | grep Volumes| awk -F "Volumes/" '{print $2}'
+  cd /Volumes/$(df -h | grep Volumes| awk -F "Volumes/" '{print $2}')
+}
+
+jump () { 
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+
+unbindport () {
+  echo "unbinding:$1"
+  docker ps -a | grep 0.0.0.0:$1| awk -F " "  '{print $1}' 
+  docker stop $(docker ps -a | grep 0.0.0.0:$1| awk -F " "  '{print $1}')
+  docker stop $(docker ps -a | grep $1| awk -F " "  '{print $1}')
+}
+
+jumpls () { 
+    cd -P "$MARKPATH/$1" && ls 2>/dev/null || echo "No such mark: $1"
+}
+
+mark () { 
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+unmark () { 
+    rm -if "$MARKPATH/$1"
+}
+marks () {
+    ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
+}
+
+unmarkall () {
+  for i in `marks  | awk -F" " '{print $2}'`
+  do
+  unmark $i
+  done
+}
+
+_completemarks () {
+  reply=($(ls $MARKPATH))
+}
+
+compctl -K _completemarks jump
+compctl -K _completemarks unmark
+
+mcd () {
+  mkdir "$1"
+  cd "$1"
+}
+
+gol () {
+  cd `ls -trd */ |tail -1`
+  ls
+  (($#)) && [ -f README.md ] && more README.md || echo ""
+}
+
+gof () {
+  cd `ls -trd */ |head -1`
+  ls
+  (($#)) && [ -f README.md ] && more README.md || echo ""
+}
+
+newday () {
+  cd /Volumes/research
+  unmark today -y
+  mkdir  "$1"
+  cd  "$1"
+  mark "$1" .
+  mark today .
+}
+
+whitespace () {
+  tr -s " " < $1 | tee $1
+}
+
+help () {
+  set -e
+  if (( $# < 2 )); then
+    echo "Illegal number of parameters"   
+  fi
+  if [ "$1" = "add" ]; then
+    echo "$@" >> ~/dotfiles/helpfile
+  elif [ "$1" = "find" ]; then
+    grep $2 ~/dotfiles/helpfile
+  else
+   echo "#help add or help find"
+  fi
+}
+
+syncDotFiles (){
+  # Check if $1 is a git repository
+    stat "$1" > /dev/null || return 1;
+    cd $1; echo "Checking $PWD";
+    git status --porcelain || return 1; # A fatal error if $PWD is not a git repo
+    git add .
+    git commit -m "update dotfiles"
+    git push origin master
+}
+
+alias showspace="du -s * | sort -n"
+alias howmuch="sudo du -sh /* | sort -n | grep  '[[:digit:]]G'"
+alias gspace="sudo du -sh .* | sort -n | grep  '[[:digit:]]G'"
+alias mspace="sudo du -sh .* | sort -n | grep  '[[:digit:]]M'"
+alias makespace='xcrun simctl delete unavailable && find . -name "node_modules" -type d -exec rm -rf '{}' +' #removes al
+
+alias ready="diskutil mount /dev/disk2s1 && jump today"
+alias latest="diskutil mount /dev/disk2s1 && jump latest"
+
+alias youtube="/usr/local/bin/mpsyt"
+alias howlong="pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f3 -d';'"
+

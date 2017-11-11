@@ -1,0 +1,46 @@
+alias docks='docker-machine ls'
+#alias unbind="docker stop $(docker ps -a | grep 0.0.0.0:80 | awk -F " "  '{print $1}')"
+alias york='eval $(docker-machine env york)'
+alias dup='rm -f api/tmp/pids/server.pid && docker-compose up'
+alias dcr='docker-compose run api bundle exec'
+alias dub='docker-compose build $1'
+
+
+
+cloud () {
+  change-profile $1
+  docker-machine ssh $1
+  change-profile v
+}
+
+ddm () {
+  docker-machine rm -y $1
+}
+
+killDocks(){
+ 
+
+ps -ax | grep "com.docker.osx.hyperkit.linux" | grep -vq "grep"
+if [ $? -eq 1 ]; then
+  echo "Docker is not runninng."
+  exit 1
+fi
+
+# remove all images
+docker ps -aq | xargs docker rm
+docker images | grep none | awk '{print $3}' | xargs docker rmi --force
+
+# reduce qemu image
+IMAGE_DIR=$HOME/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux
+mv $IMAGE_DIR/Docker.qcow2 $IMAGE_DIR/Docker.backup.qcow2
+qemu-img convert -O qcow2 $IMAGE_DIR/Docker.backup.qcow2 $IMAGE_DIR/Docker.qcow2
+
+# show image size
+du -ms $IMAGE_DIR/*.qcow2
+
+# remove outdated image
+rm $IMAGE_DIR/Docker.backup.qcow2
+
+echo "Reducing image successfully."
+echo "Please restart Docker."
+}

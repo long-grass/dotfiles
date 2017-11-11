@@ -1,0 +1,26 @@
+alias hist="history | grep" # use like hist rails
+alias openz="code ~/.zshrc"
+alias opena="code ~/dotfiles/zfiles/aliases"
+alias openf="code ~/dotfiles/zfiles/functions"
+alias openj="code ~/dotfiles/zfiles/jsbuilds"
+alias sourcez="source ~/.zshrc"
+alias vs="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code ."
+alias html="mv *htm index.html && open index.html"
+alias re="more README.md"
+alias ma="more Makefile"
+alias hos="sudo vi /etc/hosts"
+alias ok="change-profile marsden"
+alias lt='ls -ltr'
+
+alias hidedesk='defaults write com.apple.finder CreateDesktop -bool false; killall Finder;'
+alias showdesk='defaults write com.apple.finder CreateDesktop -bool true; killall Finder;'
+alias lock="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+
+alias start="python -m SimpleHTTPServer 8000 && /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias letsgo="vs . && npm start"
+
+alias blog="open ./_posts/"
+
+alias cj="create-js-app"
+alias hyp="npm run hyperapp"
+alias m="make"

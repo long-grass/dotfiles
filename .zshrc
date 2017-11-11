@@ -5,8 +5,16 @@ export ZSH=$HOME/.oh-my-zsh
 
 setopt EXTENDED_HISTORY 
 
-source ~/zfiles/aliases
-source ~/zfiles/functions
+source ~/zfiles/general
+source ~/zfiles/docker
+source ~/zfiles/vagrant
+source ~/zfiles/git
+source ~/zfiles/fs
+source ~/zfiles/make
+source ~/zfiles/terminal
+source ~/zfiles/js
+source ~/zfiles/rails
+source ~/zfiles/elixir
 
 if [ `uname` = 'Darwin' ] ; then
   ZSH_THEME="robbyrussell"
@@ -38,7 +46,7 @@ export PAGER='less -f'
 
 if [ `uname` = 'Darwin' ]
   then
-  . `brew --prefix`/etc/profile.d/z.sh
+  # . `brew --prefix`/etc/profile.d/z.sh
   export PATH=/usr/local/bin/:$PATH
   export VAGRANT_HOME="~/vagrant/vagrant_home"
   source "$HOME/.homesick/repos/homeshick/homeshick.sh"
