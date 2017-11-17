@@ -16,3 +16,14 @@ gitq () {
   git add .
   git commit -m $1
 }
+
+gitstory () {
+  INDEX=$(git log | grep commit | wc | awk -F " " '{print $1}')
+  for i in `git log | grep commit | awk -F " " '{print $2}'`
+  do 
+    git checkout $i
+    gito stage-${INDEX}
+    gitq stage-${INDEX}
+    let INDEX=${INDEX}-1
+  done
+}
