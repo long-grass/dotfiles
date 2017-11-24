@@ -17,6 +17,8 @@ source ~/zfiles/jsbuilds
 source ~/zfiles/rails
 source ~/zfiles/elixir
 
+
+
 if [ `uname` = 'Darwin' ] ; then
   ZSH_THEME="robbyrussell"
 else
@@ -50,8 +52,8 @@ if [ `uname` = 'Darwin' ]
   # . `brew --prefix`/etc/profile.d/z.sh
   export PATH=/usr/local/bin/:$PATH
   export VAGRANT_HOME="~/vagrant/vagrant_home"
-  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-  fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+#  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+ # fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -61,6 +63,14 @@ bindkey "^U" backward-kill-line
 bindkey "^X\\x7f" backward-kill-line
 
 bindkey "^X^_" redo
+
+function set-window-title() {
+  # if [[ "$TERM" == ((x|a|ml|dt|E)term*|(u|)rxvt*) ]]; then
+    printf "\e]2;%s\a" io37
+  # fi
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd set-window-title
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
