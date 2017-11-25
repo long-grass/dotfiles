@@ -1,7 +1,7 @@
 alias coro='cd /Volumes/vagrant/vagrant/coreos-vagrant && vagrant up && vagrant ssh'
 alias showv='cd ~/vagrant/vagrant_home/boxes && du -sh * && cd -'
 alias addvuser='usermod -a -G docker vagrant'
-
+alias vup='vagrant up'
 
 vrun () {
   eval 'vagrant ssh -c'" \"${@:1} \""
