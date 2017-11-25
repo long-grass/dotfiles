@@ -16,6 +16,7 @@ source ~/zfiles/js
 source ~/zfiles/jsbuilds
 source ~/zfiles/rails
 source ~/zfiles/elixir
+source ~/zfiles/vagrant
 
 
 
