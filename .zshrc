@@ -16,9 +16,6 @@ source ~/zfiles/js
 source ~/zfiles/jsbuilds
 source ~/zfiles/rails
 source ~/zfiles/elixir
-source ~/zfiles/vagrant
-
-
 
 if [ `uname` = 'Darwin' ] ; then
   ZSH_THEME="robbyrussell"
