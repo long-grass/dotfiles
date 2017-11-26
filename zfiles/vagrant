@@ -9,10 +9,16 @@ vrun () {
 }
 
 vkill () {
-  vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant suspend $line; done
+  vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done
   cd 
 }
 
+
+vdestroy () {
+  vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant destroy $line; done
+  cd 
+}
+ 
 govm () {
   change-profile stretch
   vagrant ssh
