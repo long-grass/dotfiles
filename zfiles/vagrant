@@ -26,14 +26,11 @@ govm () {
 }
 
 vk (){
-  change-profile kemerovo
+  change-profile stretch
   cd /Volumes/vagrant/kemerovo
   vagrant ssh
   change-profile v
 }
 
 
-startvk() { # vagrant global-status | grep kemesrovo | awk '{print $1}' 
-  cd /Volumes/vagrant/kemerovo &&  vagrant up
-}
 
