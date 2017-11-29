@@ -78,7 +78,7 @@ gof () {
 }
 
 newday () {
-  cd /Volumes/research
+  cd /Volumes/workspace/diary
   unmark today -y
   mkdir  "$1"
   cd  "$1"

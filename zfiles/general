@@ -1,10 +1,9 @@
 alias hist="history | grep" # use like hist rails
 alias openz="vs ~/.zshrc"
-alias opena="vs ~/dotfiles/zfiles/aliases"
-alias openf="vs ~/dotfiles/zfiles/functions"
-alias openj="vs ~/dotfiles/zfiles/jsbuilds"
+alias openzf="vs ~/zfiles"
 alias sourcez="source ~/.zshrc"
 alias vs="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code ."
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code ."
 alias html="mv *htm index.html && open index.html"
 alias re="more README.md"
 alias ma="more Makefile"

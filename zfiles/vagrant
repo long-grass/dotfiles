@@ -5,7 +5,11 @@ alias vup='vagrant up'
 alias vgs="vagrant global-status"
 
 vrun () {
-  eval 'vagrant ssh -c'" \"${@:1} \""
+  eval 'vagrant ssh -c '" \"${@:1} \""
+}
+
+vclear() {
+  vagrant global-status --prune
 }
 
 vkill () {
