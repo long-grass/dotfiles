@@ -10,10 +10,14 @@ alias ma="more Makefile"
 alias hos="sudo vi /etc/hosts"
 alias ok="change-profile marsden"
 alias lt='ls -ltr'
-
+alias work='cd /srv/website'
 alias hidedesk='defaults write com.apple.finder CreateDesktop -bool false; killall Finder;'
 alias showdesk='defaults write com.apple.finder CreateDesktop -bool true; killall Finder;'
 alias lock="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+alias sms="sudo make start"
+alias ms="make start"
+alias smb="sudo make build"
+alias mb="make build"
 
 alias start="python -m SimpleHTTPServer 8000 && /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias letsgo="vs . && npm start"

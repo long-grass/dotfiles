@@ -4,7 +4,7 @@ alias gitfirst="git init && git add . && git commit -m 'first'"
 alias gitc='git commit -m "typo"'
 alias gitremote="git remote -v"
 alias branchdate='git for-each-ref --sort=-committerdate refs/heads/ --format="%(authordate:short)%09%(objectname:short)%09%1B[0;33m%(refname:short)%1B[m%09"'
-
+alias spull="sudo git pull origin master"
 
 
 gito () {
