@@ -5,7 +5,11 @@ alias dup='rm -f api/tmp/pids/server.pid && docker-compose up'
 alias dcr='docker-compose run api bundle exec'
 alias dub='docker-compose build $1'
 
-
+remakedocker (){
+  rm -rf ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2
+  ln -s /Volumes/docker/com.docker.driver.amd64-linux/Docker.qcow2 ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2
+  ls -l ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2
+}
 
 cloud () {
   change-profile $1
@@ -17,7 +21,7 @@ ddm () {
   docker-machine rm -y $1
 }
 
-killDocks(){
+killdocks(){
  
 
 ps -ax | grep "com.docker.osx.hyperkit.linux" | grep -vq "grep"

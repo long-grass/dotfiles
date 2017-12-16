@@ -1,7 +1,8 @@
 
 alias dev="npm run dev"
 alias vip="vi package.json"
-alias nrb="npm run build"
+alias nb="npm run build"
+alias ns="npm run start"
 
 jsx () {
   for i in *.jsx
