@@ -1,0 +1,4 @@
+alias ms="make start"
+alias mp="make publish"
+alias mb="make build"
+alias md="make deploy"
