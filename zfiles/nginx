@@ -1,0 +1,2 @@
+alias sns="service nginx start"
+alias snr="service nginx restart"
