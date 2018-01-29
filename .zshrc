@@ -14,6 +14,9 @@ source ~/zfiles/js
 source ~/zfiles/jsbuilds
 source ~/zfiles/rails
 source ~/zfiles/elixir
+source ~/zfiles/aws
+source ~/zfiles/cloud
+source ~/zfiles/nginx
 
 if [ `uname` = 'Darwin' ] ; then
   ZSH_THEME="robbyrussell"

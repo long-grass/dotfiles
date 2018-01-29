@@ -1,0 +1,3 @@
+alias ubuftp='sftp -i "/Volumes/workspace/aws/highgatewoods.pem" ubuntu@ec2-54-86-218-229.compute-1.amazonaws.com'
+alias ubu='ssh -i "/Volumes/workspace/aws/highgatewoods.pem" ubuntu@ec2-54-86-218-229.compute-1.amazonaws.com'
+alias newbs='eb init --platform node.js --region us-west-2'
