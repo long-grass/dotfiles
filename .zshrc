@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-
-
 setopt EXTENDED_HISTORY 
 
 source ~/zfiles/general
@@ -45,15 +43,6 @@ fi
 export EDITOR='code'
 export PAGER='less -f'
 
-if [ `uname` = 'Darwin' ]
-  then
-  # . `brew --prefix`/etc/profile.d/z.sh
-  export PATH=/usr/local/bin/:$PATH
-  export VAGRANT_HOME="~/vagrant/vagrant_home"
-#  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
- # fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
-fi
-
 source $ZSH/oh-my-zsh.sh
 
 bindkey "^U" backward-kill-line
@@ -73,3 +62,4 @@ add-zsh-hook precmd set-window-title
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
