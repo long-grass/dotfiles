@@ -7,6 +7,10 @@ scarper (){
   diskutil unmount /dev/disk2s1
 }
 
+cleanup(){
+  find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+}
+
 
 ds () {
   du -s * | sort -n
@@ -118,7 +122,6 @@ alias showspace="du -s * | sort -n"
 alias howmuch="sudo du -sh /* | sort -n | grep  '[[:digit:]]G'"
 alias gspace="sudo du -sh .* | sort -n | grep  '[[:digit:]]G'"
 alias mspace="sudo du -sh .* | sort -n | grep  '[[:digit:]]M'"
-alias makespace='xcrun simctl delete unavailable && find . -name "node_modules" -type d -exec rm -rf '{}' +' #removes al
 
 alias ready="diskutil mount /dev/disk2s1 && jump today"
 alias latest="diskutil mount /dev/disk2s1 && jump latest"
