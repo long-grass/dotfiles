@@ -1,5 +1,5 @@
 railsn () {
-  rails new $1 --database=postgresql
+  rails new $1 --database=postgresql && cd $1
 }
 
 alias rs='rails server'
