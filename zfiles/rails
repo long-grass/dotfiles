@@ -6,4 +6,7 @@ alias rs='rails server'
 alias rdc='rake db:create'
 alias rdm='rake db:migrate'
 alias rds='rake db:seed'
-alias psgr='bundle exec passenger start'
+
+psgr () {
+  bundle exec passenger start -p $1
+}
