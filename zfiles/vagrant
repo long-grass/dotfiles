@@ -3,6 +3,9 @@ alias showv='cd ~/vagrant/vagrant_home/boxes && du -sh * && cd -'
 alias addvuser='usermod -a -G docker vagrant'
 alias vup='vagrant up'
 alias vgs="vagrant global-status"
+alias vh="vagrant halt"
+alias vd="vagrant destroy"
+alias vr="vagrant reload"
 
 vrun () {
   eval 'vagrant ssh -c '" \"${@:1} \""
