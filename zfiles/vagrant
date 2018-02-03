@@ -38,5 +38,9 @@ vk (){
   change-profile v
 }
 
+vrails (){
+  cd ~/starters/rails && bundle exec passenger start -p 13000
+}
+
 
 
