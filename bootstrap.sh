@@ -2,7 +2,7 @@ mv ~/Library/Preferences/com.googlecode.iterm2.plist ~/Library/Preferences/com.g
 ln -s ~/dotfiles/zfiles/iterm/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 mv ~/Library/Preferences/com.apple.spaces.plist ~/Library/Preferences/com.apple.spaces.plist.bak
 ln -s ~/dotfiles/zfiles/Desktops/com.apple.spaces.plist ~/Library/Preferences/com.apple.spaces.plist
-
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zprofile ~/.zprofile
 ln -s ~/dotfiles/zfiles ~/zfiles
