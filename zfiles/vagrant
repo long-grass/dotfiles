@@ -40,7 +40,7 @@ vk (){
 
 hello-rails (){
   if [ `uname` = 'Darwin' ] ; then
-    echo 'no mate, you need to be on linux for this
+    echo 'no mate, you need to be on linux for this'
   else
     cd ~/starters/hello-rails && bundle exec passenger start -p 13000
   fi
