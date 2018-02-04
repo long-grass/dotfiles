@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nwAllPush</key>
+	<true/>
+	<key>nwDevices</key>
+	<array>
+		<dict>
+			<key>bonjourName</key>
+			<string>Canon MG3000 series</string>
+			<key>interface</key>
+			<integer>2</integer>
+			<key>modelName</key>
+			<string>Canon MG3000 series</string>
+			<key>nwConnect</key>
+			<true/>
+			<key>nwPull</key>
+			<true/>
+			<key>nwPush</key>
+			<false/>
+			<key>usbLocationID</key>
+			<integer>0</integer>
+			<key>uuid</key>
+			<string>00000000-0000-1000-8000-84BA3BC627AB</string>
+		</dict>
+	</array>
+</dict>
+</plist>
