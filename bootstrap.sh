@@ -1,7 +1,5 @@
 mkdir ~/orig
 
-mv ~/Library/Preferences/* ~/orig
-cp -a ~/dotfiles/zfiles/Preferences/* ~/Library/Preferences
 mv ~/Library/Application\ Support/Dock ~/orig
 cp -a ~/dotfiles/zfiles/Dock ~/Library/Application\ Support/
 
