@@ -33,7 +33,7 @@
 	<key>JobName</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/zfiles/wallpaper</string>
+	<string>/Volumes/workspace/wallpaper</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -67,12 +67,17 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>751 329 599 459 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>414 430 1018 447 0 0 1440 877 </string>
+	<string>414 425 918 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>156 39 1179 588 0 0 1440 877 </string>
+	<string>156 175 570 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 422 570 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -270,7 +275,7 @@
 			<key>Background Image Is Tiled</key>
 			<true/>
 			<key>Background Image Location</key>
-			<string>~/dotfiles/zfiles/wallpaper/blue.jpeg</string>
+			<string>/Volumes/workspace/wallpaper/blue.jpeg</string>
 			<key>Blend</key>
 			<real>0.92152318709935899</real>
 			<key>Blinking Cursor</key>
@@ -886,7 +891,7 @@
 			<key>Background Image Is Tiled</key>
 			<true/>
 			<key>Background Image Location</key>
-			<string>~/dotfiles/zfiles/wallpaper/brown.jpeg</string>
+			<string>/Volumes/workspace/wallpaper/blue.jpeg</string>
 			<key>Blend</key>
 			<real>0.90501427283653846</real>
 			<key>Blinking Cursor</key>
@@ -1506,7 +1511,7 @@
 			<key>Background Image Is Tiled</key>
 			<true/>
 			<key>Background Image Location</key>
-			<string>~/dotfiles/zfiles/wallpaper/brown.jpeg</string>
+			<string>/Volumes/workspace/wallpaper/brown.jpeg</string>
 			<key>Blend</key>
 			<real>0.92152318709935899</real>
 			<key>Blinking Cursor</key>
@@ -1967,7 +1972,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>FFF28A61-DAE0-48D4-ABB7-38E788426605</string>
 	<key>NoSyncLastTipTime</key>
-	<real>539239240.91488802</real>
+	<real>539430054.81769705</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -2009,6 +2014,7 @@
 		<string>0031</string>
 		<string>0032</string>
 		<string>0033</string>
+		<string>0034</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
