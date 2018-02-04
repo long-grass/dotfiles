@@ -18,6 +18,7 @@ alias sms="sudo make start"
 alias ms="make start"
 alias smb="sudo make build"
 alias mb="make build"
+alias abc="sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db 'select * from data'"
 
 alias start="python -m SimpleHTTPServer 8000 && /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias letsgo="vs . && npm start"

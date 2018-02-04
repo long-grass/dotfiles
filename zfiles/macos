@@ -11,3 +11,7 @@ defaults write com.apple.dock autohide -bool true
 
 # Enable “Do Not Track”
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+
+ehu(){
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '${1}'" && killall Dock
+}
