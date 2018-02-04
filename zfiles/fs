@@ -126,6 +126,10 @@ syncDotFiles (){
     git push origin master
 }
 
+saveDesktops () {
+  cp -r ~/Library/Application\ Support/Dock ~/dotfiles/zfiles/wallpaper
+}
+
 alias showspace="du -s * | sort -n"
 alias howmuch="sudo du -sh /* | sort -n | grep  '[[:digit:]]G'"
 alias gspace="sudo du -sh .* | sort -n | grep  '[[:digit:]]G'"
