@@ -17,6 +17,9 @@ ln -s ~/dotfiles/zfiles/Desktops/com.apple.spaces.plist ~/Library/Preferences/co
 mv ~/Library/Preferences/com.apple.systempreferences.plist ~/orig
 ln -s ~/dotfiles/zfiles/Alfred/com.apple.systempreferences.plist ~/Library/Preferences/com.apple.systempreferences.plist
 
+mv ~/Library/Preferences ~/orig
+ln -s ~/dotfiles/zfiles/Preferences ~/Library/Preferences
+
 # Main zsh/oh-my-zsh configuration. It installs from a modifies oh-my-zsh script, the only difference being it doesn't wipe out the exiting .zshrc as we want to keep our dotfiles .zshrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zprofile ~/.zprofile
