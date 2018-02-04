@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SessionItems</key>
+	<dict>
+		<key>Controller</key>
+		<string>CustomListItems</string>
+		<key>CustomListItems</key>
+		<array>
+			<dict>
+				<key>Alias</key>
+				<data>
+				AAAAAACmAAMAAQAA1jzqEgAASCsAAAAAAAAAzgAH4LIA
+				ANVO+9oAAAAACSD//gAAAAAAAAAA/////wABAAQAAADO
+				AA4AGgAMAEEAbABmAHIAZQBkACAAMgAuAGEAcABwAA8A
+				GgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAGUFw
+				cGxpY2F0aW9ucy9BbGZyZWQgMi5hcHAAABMAAS8A//8A
+				AA==
+				</data>
+				<key>CustomItemProperties</key>
+				<dict>
+					<key>com.apple.LSSharedFileList.Binding</key>
+					<data>
+					ZG5pYgAAAAACAAAAAAAAAAAAAAAAAAAAAAAA
+					ACQAAAAAAAAAZmlsZTovLy9BcHBsaWNhdGlv
+					bnMvQWxmcmVkJTIwMi5hcHAvHwAAAAAAAABj
+					b20ucnVubmluZ3dpdGhjcmF5b25zLkFsZnJl
+					ZC0yAAAAAAD4BgCOCBAAAgAAANqC2R4=
+					</data>
+				</dict>
+				<key>Name</key>
+				<string>Alfred 2</string>
+			</dict>
+			<dict>
+				<key>Alias</key>
+				<data>
+				AAAAAACgAAMAAAAA1jzqEgAASCsAAAAAAAAAzgANMBAA
+				ANZA4loAAAAACSD//gAAAAAAAAAA/////wABAAQAAADO
+				AA4AFgAKAHYAbQBzAHQAYQByAHQALgBzAGgADwAaAAwA
+				TQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAXQXBwbGlj
+				YXRpb25zL3Ztc3RhcnQuc2gAABMAAS8A//8AAA==
+				</data>
+				<key>CustomItemProperties</key>
+				<dict>
+					<key>com.apple.LSSharedFileList.Binding</key>
+					<data>
+					ZG5pYgAAAAABAAAAAAAAAAAAAAAAAAAAAAAA
+					AAIAAAAAAAAAc2g/Pz8/AQAAAAAAAAA=
+					</data>
+				</dict>
+				<key>Name</key>
+				<string>vmstart.sh</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>
