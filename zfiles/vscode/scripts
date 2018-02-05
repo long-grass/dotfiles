@@ -1,0 +1,11 @@
+backup-vsc () {
+  if [ `uname` = 'Darwin' ] ; then
+    vs --list-extensions > vscode.lista
+  fi
+}
+
+restore-vsc () {
+  if [ `uname` = 'Darwin' ] ; then
+    for x in $(cat vscode.list); do code --install-extension $x; done
+  fi
+}
