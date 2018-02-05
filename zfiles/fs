@@ -21,7 +21,7 @@ timethis () {
 }
 
 ds () {
-  du -s * | sort -n
+  du -sm * | sort -n
 }
 
 lcd () { 
