@@ -7,7 +7,9 @@ if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
 fi
 
-restore-vcs
+if [ `uname` = 'Darwin' ] ; then
+  for x in $(cat ~/dotfiles/zfiles/vscode/vscode.list); do code --install-extension $x; done
+fi
 
 # Preferences for iterm, spaces, login items and dock
 
