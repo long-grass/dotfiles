@@ -4,6 +4,10 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zprofile ~/.zprofile
 ln -s ~/dotfiles/zfiles ~/zfiles
 
+defaults delete com.apple.spaces
+defaults delete com.apple.spaces.plist
+defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
+
 if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
 fi
@@ -24,3 +28,5 @@ defaults import com.apple.spaces ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 defaults import com.apple.dock.plist ~/dotfiles/zfiles/macos/com.apple.dock.plist
 defaults import com.apple.systempreferences.plist ~/dotfiles/zfiles/macos/com.apple.systempreferences.plist
+defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
+defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
