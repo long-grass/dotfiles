@@ -1,4 +1,5 @@
 # Dotfiles
+rm ~/.zshrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zprofile ~/.zprofile
 ln -s ~/dotfiles/zfiles ~/zfiles
