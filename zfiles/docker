@@ -10,7 +10,6 @@ fixdocker () {
   ln -s /Volumes/docker/com.docker.driver.amd64-linux/Docker.qcow2 ~/Library/Containers/com.docker.docker/data/com.docker.driver.amd64-linux/Docker.qcow2
 }
 
-
 cloud () {
   change-profile $1
   docker-machine ssh $1
@@ -23,24 +22,22 @@ ddm () {
 
 killdocks(){
  
+  ps -ax | grep "com.docker.osx.hyperkit.linux" | grep -vq "grep"
+  if [ $? -eq 1 ]; then
+    echo "Docker is not runninng."
+    exit 1
+  fi
 
-ps -ax | grep "com.docker.osx.hyperkit.linux" | grep -vq "grep"
-if [ $? -eq 1 ]; then
-  echo "Docker is not runninng."
-  exit 1
-fi
+  # remove all images
+  docker ps -aq | xargs docker rm
+  docker images | grep none | awk '{print $3}' | xargs docker rmi --force
 
-# remove all images
-docker ps -aq | xargs docker rm
-docker images | grep none | awk '{print $3}' | xargs docker rmi --force
+  # show image size
+  du -ms $IMAGE_DIR/*.qcow2
 
+  # remove outdated image
+  rm $IMAGE_DIR/Docker.backup.qcow2
 
-# show image size
-du -ms $IMAGE_DIR/*.qcow2
-
-# remove outdated image
-rm $IMAGE_DIR/Docker.backup.qcow2
-
-echo "Reducing image successfully."
-echo "Please restart Docker."
+  echo "Reducing image successfully."
+  echo "Please restart Docker."
 }

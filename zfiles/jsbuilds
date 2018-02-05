@@ -1,5 +1,0 @@
-newapp () {
-  mcd $1
-  git clone https://github.com/cerico/template.git .
-  npm install
-}

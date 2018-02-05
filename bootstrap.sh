@@ -1,3 +1,5 @@
+# Preferences for iterm, spaces, login items and dock
+
 cp -a ~/dotfiles/zfiles/wallpaper/Dock ~/Library/Application\ Support/
 
 defaults import com.googlecode.iterm2.plist ~/dotfiles/zfiles/macos/com.googlecode.iterm2.plist
@@ -10,4 +12,6 @@ defaults import com.apple.systempreferences.plist ~/dotfiles/zfiles/macos/com.ap
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zprofile ~/.zprofile
 ln -s ~/dotfiles/zfiles ~/zfiles
+
+# Non destructive oh-my-zsh installation - it leaves zshrc alone!
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"

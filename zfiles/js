@@ -8,6 +8,12 @@ alias np="npm run pub"
 alias nr="npm run rebuild"
 alias nt="npm test"
 
+newapp () {
+  mcd $1
+  git clone https://github.com/cerico/template.git .
+  npm install
+}
+
 jsx () {
   for i in *.jsx
     do mv  $i `ls $i |awk -F  'x' '{print $1}'`

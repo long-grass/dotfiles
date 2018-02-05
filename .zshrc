@@ -11,7 +11,6 @@ source ~/zfiles/fs
 source ~/zfiles/make
 source ~/zfiles/terminal
 source ~/zfiles/js
-source ~/zfiles/jsbuilds
 source ~/zfiles/rails
 source ~/zfiles/elixir
 source ~/zfiles/cloud

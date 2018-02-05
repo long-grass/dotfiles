@@ -1,5 +1,5 @@
 mal() {
   change-profile stretch
-  ssh root@188.226.163.24
+  ssh root@malham.io
   change-profile v
 }
