@@ -15,6 +15,7 @@ source ~/zfiles/rails
 source ~/zfiles/elixir
 source ~/zfiles/cloud
 source ~/zfiles/nginx
+source ~/zfiles/vscode/scripts
 
 
 if [ `uname` = 'Darwin' ] ; then
