@@ -3,6 +3,11 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zprofile ~/.zprofile
 ln -s ~/dotfiles/zfiles ~/zfiles
 
+if [ ! -d ~/.oh-my-zsh ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
+fi
+
+
 # Preferences for iterm, spaces, login items and dock
 
 cp -a ~/dotfiles/zfiles/wallpaper/Dock ~/Library/Application\ Support/
