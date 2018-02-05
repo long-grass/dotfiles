@@ -2,6 +2,7 @@
 
 cp -a ~/dotfiles/zfiles/wallpaper/Dock ~/Library/Application\ Support/
 
+defaults delete com.apple.spaces.plist
 defaults import com.googlecode.iterm2.plist ~/dotfiles/zfiles/macos/com.googlecode.iterm2.plist
 defaults import com.apple.loginitems.plist ~/dotfiles/zfiles/macos/com.apple.loginitems.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
