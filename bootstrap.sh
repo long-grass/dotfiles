@@ -20,7 +20,7 @@ fi
 
 # Preferences for iterm, spaces, login items and dock
 sudo rm -rf /Library/Desktop\ Pictures
-sudo ln /Library/Desktop\ Pictures ~/dotfiles/zfiles/wallpaper/
+sudo ln -s /Library/Desktop\ Pictures ~/dotfiles/zfiles/wallpaper/
 
 sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$(ls -d1  ~/dotfiles/zfiles/wallpaper/*g)'"
 
