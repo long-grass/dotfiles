@@ -22,7 +22,10 @@ fi
 sudo rm -rf /Library/Desktop\ Pictures
 sudo ln -s  ~/dotfiles/zfiles/wallpaper/ /Library/Desktop\ Pictures
 
-sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$(ls -d1  ~/dotfiles/zfiles/wallpaper/*g)'"
+for i in `ls -d1  ~/dotfiles/zfiles/wallpaper/*g`
+  do sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "insert into data(value) values ('$(echo $i)')"
+done
+killall Dock
 
 defaults delete com.apple.spaces
 defaults delete com.apple.spaces.plist
