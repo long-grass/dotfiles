@@ -24,6 +24,10 @@ vdestroy () {
   vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant destroy $line; done
   cd 
 }
+
+cpr () {
+  change-profile $1
+}
  
 govm () {
   change-profile stretch

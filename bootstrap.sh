@@ -1,8 +1,10 @@
 # Dotfiles
-rm ~/.zshrc
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.zprofile ~/.zprofile
-ln -s ~/dotfiles/zfiles ~/zfiles
+if [ ! -d ~/dotfiles ]; then
+  rm ~/.zshrc
+  ln -s ~/dotfiles/.zshrc ~/.zshrc
+  ln -s ~/dotfiles/.zprofile ~/.zprofile
+  ln -s ~/dotfiles/zfiles ~/zfiles
+fi
 
 defaults delete com.apple.spaces
 defaults delete com.apple.spaces.plist
@@ -18,7 +20,7 @@ fi
 
 # Preferences for iterm, spaces, login items and dock
 
-cp -a ~/dotfiles/zfiles/wallpaper/Dock ~/Library/Application\ Support/
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$(ls -d1  ~/dotfiles/zfiles/wallpaper/*g)'"
 
 defaults delete com.apple.spaces
 defaults delete com.apple.spaces.plist
