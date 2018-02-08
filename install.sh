@@ -1,6 +1,3 @@
-xcode-select --install
-chgrp -R admin /usr/local
-chmod -R g+w /usr/local
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap jotta/cli
 brew install caskroom/cask/brew-cask tree docker-compose jotta-cli

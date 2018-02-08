@@ -14,6 +14,8 @@ if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
 fi
 
+ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
+
 if [ `uname` = 'Darwin' ] ; then
   for x in $(cat ~/dotfiles/zfiles/vscode/vscode.list); do code --install-extension $x; done
 fi

@@ -19,7 +19,7 @@ source ~/zfiles/vscode/scripts
 
 
 if [ `uname` = 'Darwin' ] ; then
-  ZSH_THEME="robbyrussell"
+  ZSH_THEME="bananas"
 else
   ZSH_THEME="cloud"
 fi
