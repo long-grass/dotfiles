@@ -15,6 +15,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
 fi
 
 ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
+ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
 
 if [ `uname` = 'Darwin' ] ; then
   for x in $(cat ~/dotfiles/zfiles/vscode/vscode.list); do code --install-extension $x; done
