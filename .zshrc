@@ -21,7 +21,7 @@ source ~/zfiles/vscode/scripts
 if [ `uname` = 'Darwin' ] ; then
   ZSH_THEME="meadow"
 else
-  ZSH_THEME="cloudier"
+  ZSH_THEME="cloud"
 fi
 
 export HISTFILE=~/.zsh_history
