@@ -20,7 +20,7 @@ fi
 
 # Preferences for iterm, spaces, login items and dock
 sudo rm -rf /Library/Desktop\ Pictures
-if [ ! -f ~/dotfiles/zfiles/wallpaper/sierra.jpg ]; then ; cp $(ls ~/dotfiles/zfiles/wallpaper | head -1)  ~/dotfiles/zfiles/wallpaper/sierra.jpg ;fi
+if [ ! -f ~/dotfiles/zfiles/wallpaper/sierra.jpg ]; then ; cp $(ls ~/dotfiles/zfiles/wallpaper/*g | head -1)  ~/dotfiles/zfiles/wallpaper/sierra.jpg ;fi
 sudo ln -s  ~/dotfiles/zfiles/wallpaper/ /Library/Desktop\ Pictures
 
 sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db 'DELETE FROM data;'
