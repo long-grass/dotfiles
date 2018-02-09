@@ -1,9 +1,10 @@
 # Dotfiles
-if [ ! -d ~/dotfiles ]; then
+if [ ~/dotfiles ]; then
   rm ~/.zshrc
   ln -s ~/dotfiles/.zshrc ~/.zshrc
   ln -s ~/dotfiles/.zprofile ~/.zprofile
   ln -s ~/dotfiles/zfiles ~/zfiles
+  source ~/.zshrc
 fi
 
 defaults delete com.apple.spaces
