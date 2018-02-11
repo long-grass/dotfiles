@@ -30,7 +30,5 @@ To just link, without installing
 
 # What it won't do
 
-It won't do the backgrounds for iterm or spaces, unless, you create a /Volumes/workspace/wallpaper partition, as an absolute path is needed, will look at ways arond this later
-
 It won't partition your disk up for you, I put my home drive, docker, vagrant and work all in separate partitions rather than the standard one big partition approach
 
