@@ -2,6 +2,9 @@
 
 These are my dotfiles, for use across OSX, and Linux instances in vagrant and in cloud.
 
+![screenshot](https://cooper.nyc3.digitaloceanspaces.com/screenshots/layout.jpeg)
+
+
 # To download
 
 ```
