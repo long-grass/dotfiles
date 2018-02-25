@@ -15,6 +15,18 @@ vclear() {
   vagrant global-status --prune
 }
 
+dee (){
+  change-profile loading
+if [ $(VBoxManage list runningvms | wc -l) = "0" ]; then
+  cd `vagrant global-status |grep virtualbox | head | awk -F" " '{print $5}'`
+  vagrant up
+else
+  cd `vagrant global-status |grep running | head | awk -F" " '{print $5}'`
+fi
+change-profile stretch
+  vagrant ssh
+  change-profile v
+}
 vkill () {
   vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done
   cd 
@@ -37,7 +49,7 @@ govm () {
 
 vk (){
   change-profile stretch
-  cd /Volumes/vagrant/kemerovo
+  cd `vagrant global-status |grep running | head | awk -F" " '{print $5}'`
   vagrant ssh
   change-profile v
 }
