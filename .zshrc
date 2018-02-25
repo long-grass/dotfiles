@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 setopt EXTENDED_HISTORY 
 
-source .zshrc.local
+source ~/.zshrc.local
 source ~/zfiles/general
 source ~/zfiles/docker
 source ~/zfiles/vagrant
