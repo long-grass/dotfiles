@@ -10,3 +10,17 @@ alias rds='rake db:seed'
 psgr () {
   bundle exec passenger start -p $1
 }
+
+logify () {
+  cpr logging
+  jump main
+  tail -f log/development.log
+  cpr v
+}
+
+railsc () {
+  cpr railsc
+  jump main
+  rails c
+  cpr v
+}

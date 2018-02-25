@@ -7,6 +7,7 @@ if [ ~/dotfiles ]; then
   source ~/.zshrc
 fi
 
+  source ~/.zshrc
 defaults delete com.apple.spaces
 defaults delete com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist

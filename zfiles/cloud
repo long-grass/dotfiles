@@ -10,3 +10,9 @@ kem() {
   vagrant ssh
   change-profile v
 }
+
+derbent (){
+  change-profile derbent
+  ssh root@178.62.127.183
+  change-profile v
+}
