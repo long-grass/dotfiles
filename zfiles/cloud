@@ -16,6 +16,12 @@ mbp () {
   ssh kelso
   change-profile oak
 }
+
+kelso () {
+  change-profile v
+  ssh kelso
+  change-profile oak
+}
 derbent (){
   change-profile derbent
   ssh root@178.62.127.183
