@@ -1,12 +1,18 @@
 mal() {
-  change-profile oak
+  change-profile islands
   ssh root@malham.io
-  change-profile v
+  change-profile oak
 }
 
 kem() {
   change-profile stretch
   cd /Volumes/vagrant/kemerovo/larch
   vagrant ssh
-  change-profile v
+  change-profile oak
+}
+
+mbp () {
+	change-profile v
+	ssh kelso
+	change-profile oak
 }
