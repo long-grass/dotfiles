@@ -1,11 +1,11 @@
 alias coro='cd /Volumes/vagrant/vagrant/coreos-vagrant && vagrant up && vagrant ssh'
 alias showv='cd ~/vagrant/vagrant_home/boxes && du -sh * && cd -'
 alias addvuser='usermod -a -G docker vagrant'
-alias vup='vagrant up'
+alias vup='vagrant up && govm'
 alias vgs="vagrant global-status"
 alias vh="vagrant halt"
 alias vd="vagrant destroy"
-alias vr="vagrant reload"
+alias vr="vagrant reload && govm"
 
 vrun () {
   eval 'vagrant ssh -c '" \"${@:1} \""
@@ -54,7 +54,7 @@ vk (){
   change-profile v
 }
 
-hello-rails (){
+hellorails (){
   if [ `uname` = 'Darwin' ] ; then
     echo 'no mate, you need to be on linux for this'
   else

@@ -12,7 +12,12 @@ kem() {
 }
 
 mbp () {
-	change-profile v
-	ssh kelso
-	change-profile oak
+  change-profile v
+  ssh kelso
+  change-profile oak
+}
+derbent (){
+  change-profile derbent
+  ssh root@178.62.127.183
+  change-profile v
 }

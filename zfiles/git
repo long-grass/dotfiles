@@ -10,6 +10,9 @@ alias spull="sudo git pull origin master"
 gito () {
   git branch "$1"
   git checkout "$1"
+  git pull origin "$1"
+  git branch "$1-g"
+  git checkout "$1-g"
 }
 
 gitq () {

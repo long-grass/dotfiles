@@ -19,10 +19,12 @@ source ~/zfiles/nginx
 source ~/zfiles/vscode/scripts
 
 
-if [ `uname` = 'Darwin' ] ; then
-  ZSH_THEME="meadow"
-else
+if [ `hostname -s` = 'kelso' ] ; then
   ZSH_THEME="cloud"
+elif [ `hostname -s` = 'kemerovo' ] ; then
+  ZSH_THEME="avit"
+else
+  ZSH_THEME="robbyrussell"
 fi
 
 export HISTFILE=~/.zsh_history
