@@ -24,3 +24,11 @@ railsc () {
   rails c
   cpr v
 }
+
+modelsearch () {
+ echo $1 | spring rails c | grep $2
+}
+
+railshist () {
+  echo 'puts Readline::HISTORY.entries.each { |c| puts c }' | spring rails c | grep $1
+}

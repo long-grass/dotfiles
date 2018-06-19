@@ -4,6 +4,8 @@ if [ ~/dotfiles ]; then
   ln -s ~/dotfiles/.zshrc ~/.zshrc
   ln -s ~/dotfiles/.zprofile ~/.zprofile
   ln -s ~/dotfiles/zfiles ~/zfiles
+  mkdir ~/dotfiles/rfy
+  touch ~/.zhsrc.local
   source ~/.zshrc
 fi
 

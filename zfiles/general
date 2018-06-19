@@ -1,4 +1,7 @@
-alias hist="history | grep" # use like hist rails
+alias hist="history | grep -i" # use like hist rails
+alias o="rmate"
+alias oi="rmate  ~/kelso.ovpn"
+alias jm="jump main"
 alias openz="vs ~/.zshrc"
 alias openzf="vs ~/zfiles"
 alias sourcez="source ~/.zshrc"
