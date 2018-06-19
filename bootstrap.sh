@@ -1,11 +1,11 @@
 # Dotfiles
 if [ ~/dotfiles ]; then
   rm ~/.zshrc
+  mkdir ~/dotfiles/rfy
+  touch ~/.zhsrc.local
   ln -s ~/dotfiles/.zshrc ~/.zshrc
   ln -s ~/dotfiles/.zprofile ~/.zprofile
   ln -s ~/dotfiles/zfiles ~/zfiles
-  mkdir ~/dotfiles/rfy
-  touch ~/.zhsrc.local
   source ~/.zshrc
 fi
 
