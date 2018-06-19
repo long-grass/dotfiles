@@ -1,7 +1,7 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap jotta/cli
-brew install caskroom/cask/brew-cask tree docker-compose slack jotta-cli
-brew cask install iterm2 vagrant docker alfred google-chrome postgresql visual-studio-code firefox chrome-devtools
+brew install caskroom/cask/brew-cask pow qt redis tree docker-compose postgresql jotta-cli docker-machine
+brew cask install iterm2 vagrant vagrant-manager virtualbox virtualbox-extension-pack postman docker alfred google-chrome slack visual-studio-code firefox chrome-devtools
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
