@@ -1,29 +1,29 @@
 mal() {
-  change-profile islands
+  cpr islands
   ssh root@malham.io
-  change-profile oak
+  cpr oak
 }
 
 kem() {
-  change-profile stretch
+  cpr stretch
   cd /Volumes/vagrant/kemerovo/larch
   vagrant ssh
-  change-profile oak
+  cpr oak
 }
 
 mbp () {
-  change-profile v
+  cpr v
   ssh kelso
-  change-profile oak
+  cpr oak
 }
 
 kelso () {
-  change-profile v
+  cpr v
   ssh kelso
-  change-profile oak
+  cpr oak
 }
 derbent (){
-  change-profile derbent
+  cpr derbent
   ssh root@178.62.127.183
-  change-profile v
+  cpr v
 }

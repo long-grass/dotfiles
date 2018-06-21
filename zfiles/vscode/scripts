@@ -1,10 +1,10 @@
-backup-vsc () {
+backupvsc () {
   if [ `uname` = 'Darwin' ] ; then
     vs --list-extensions > ~/dotfiles/zfiles/vscodevscode.list
   fi
 }
 
-restore-vsc () {
+restorevsc () {
   if [ `uname` = 'Darwin' ] ; then
     for x in $(cat ~/dotfiles/zfiles/vscode/vscode.list); do code --install-extension $x; done
   fi

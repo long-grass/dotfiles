@@ -16,16 +16,16 @@ vclear() {
 }
 
 dee (){
-  change-profile loading
+  cpr loading
 if [ $(VBoxManage list runningvms | wc -l) = "0" ]; then
   cd `vagrant global-status |grep virtualbox | head | awk -F" " '{print $5}'`
   vagrant up
 else
   cd `vagrant global-status |grep running | head | awk -F" " '{print $5}'`
 fi
-change-profile stretch
+cpr stretch
   vagrant ssh
-  change-profile v
+  cpr v
 }
 vkill () {
   vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done
@@ -38,20 +38,20 @@ vdestroy () {
 }
 
 cpr () {
-  change-profile $1
+  cpr $1
 }
  
 govm () {
-  change-profile stretch
+  cpr stretch
   vagrant ssh
-  change-profile v
+  cpr v
 }
 
 vk (){
-  change-profile stretch
+  cpr stretch
   cd `vagrant global-status |grep running | head | awk -F" " '{print $5}'`
   vagrant ssh
-  change-profile v
+  cpr v
 }
 
 hellorails (){
