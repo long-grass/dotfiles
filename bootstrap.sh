@@ -1,10 +1,8 @@
+#! /usr/bin/env zsh
 # Dotfiles
 defaults delete com.apple.spaces
 defaults delete com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
-
-ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
-ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
 
 if [ `uname` = 'Darwin' ] ; then
   for x in $(cat ~/dotfiles/zfiles/vscode/vscode.list); do code --install-extension $x; done
@@ -47,8 +45,11 @@ if [ ~/dotfiles ]; then
   ln -s ~/dotfiles/zfiles ~/zfiles
 fi
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
 fi
+
+ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
+ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
+
+source ~/.zshrc
