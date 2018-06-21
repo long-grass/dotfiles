@@ -1,7 +1,7 @@
 # Dotfiles
 if [ ~/dotfiles ]; then
   rm ~/.zshrc
-  mkdir ~/dotfiles/rfy
+  mkdir ~/dotfiles/zfiles/rfy
   touch ~/.zshrc.local
   ln -s ~/dotfiles/.zshrc ~/.zshrc
   ln -s ~/dotfiles/.zprofile ~/.zprofile
@@ -50,3 +50,5 @@ defaults import com.apple.dock.plist ~/dotfiles/zfiles/macos/com.apple.dock.plis
 defaults import com.apple.systempreferences.plist ~/dotfiles/zfiles/macos/com.apple.systempreferences.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
+
+rm -rf $(brew --cache)
