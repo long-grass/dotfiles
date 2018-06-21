@@ -4,10 +4,6 @@ defaults delete com.apple.spaces
 defaults delete com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 
-if [ -d /Volumes/home ]; then
-  sudo dscl . -change Users/$(id -F)  NFSHomeDirectory /Users/$(id -F) /Volumes/home
-fi
-
 if [ `uname` = 'Darwin' ] ; then
   for x in $(cat ~/dotfiles/zfiles/vscode/vscode.list); do code --install-extension $x; done
 fi
