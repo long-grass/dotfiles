@@ -1,24 +1,7 @@
 # Dotfiles
-if [ ~/dotfiles ]; then
-  rm ~/.zshrc
-  touch ~/dotfiles/zfiles/rfy
-  touch ~/.zshrc.local
-  ln -s ~/dotfiles/.zshrc ~/.zshrc
-  ln -s ~/dotfiles/.zprofile ~/.zprofile
-  ln -s ~/dotfiles/zfiles ~/zfiles
-  source ~/.zshrc
-fi
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-  source ~/.zshrc
 defaults delete com.apple.spaces
 defaults delete com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
-
-if [ ! -d ~/.oh-my-zsh ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
-fi
 
 ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
 ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
@@ -54,3 +37,18 @@ defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 
 rm -rf $(brew --cache)
+
+if [ ~/dotfiles ]; then
+  rm ~/.zshrc
+  touch ~/dotfiles/zfiles/rfy
+  touch ~/.zshrc.local
+  ln -s ~/dotfiles/.zshrc ~/.zshrc
+  ln -s ~/dotfiles/.zprofile ~/.zprofile
+  ln -s ~/dotfiles/zfiles ~/zfiles
+fi
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+if [ ! -d ~/.oh-my-zsh ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
+fi
