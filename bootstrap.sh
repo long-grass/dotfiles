@@ -1,4 +1,8 @@
 # Dotfiles
+if [ -d /Volumes/home ]; then
+  sudo dscl . -change Users/$(id -F)  NFSHomeDirectory /Users/$(id -F) /Volumes/home
+fi
+
 if [ ~/dotfiles ]; then
   rm ~/.zshrc
   mkdir ~/dotfiles/zfiles/rfy
@@ -51,4 +55,12 @@ defaults import com.apple.systempreferences.plist ~/dotfiles/zfiles/macos/com.ap
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 
-rm -rf $(brew --cache)
+if [ -d /Volumes/vagrant ]; then
+  mkdir /Volumes/vagrant/VirtualBox\ VMs
+  mkdir /Volumes/vagrant/.vagrant.d
+  ln -s /Volumes/vagrant/VirtualBox\ VMs /Volumes/home/VirtualBox\ VMs
+  ln -s /Volumes/vagrant/.vagrant.d .Volumes/home/.vagrant.d
+  git clone https://github.com/cerico/kemerovo.git
+  cd kemerovo/larch
+  vagrant up
+fi
