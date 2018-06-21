@@ -1,7 +1,7 @@
 # Dotfiles
 if [ ~/dotfiles ]; then
   rm ~/.zshrc
-  mkdir ~/dotfiles/rfy
+  mkdir ~/dotfiles/zfiles/rfy
   touch ~/.zshrc.local
   ln -s ~/dotfiles/.zshrc ~/.zshrc
   ln -s ~/dotfiles/.zprofile ~/.zprofile
