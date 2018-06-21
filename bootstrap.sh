@@ -50,3 +50,5 @@ defaults import com.apple.dock.plist ~/dotfiles/zfiles/macos/com.apple.dock.plis
 defaults import com.apple.systempreferences.plist ~/dotfiles/zfiles/macos/com.apple.systempreferences.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
+
+rm -rf $(brew --cache)
