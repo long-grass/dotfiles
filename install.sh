@@ -1,3 +1,7 @@
+if [ -d /Volumes/home ]; then
+  sudo dscl . -change Users/$(id -F)  NFSHomeDirectory /Users/$(id -F) /Volumes/home
+fi
+
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew tap jotta/cli
