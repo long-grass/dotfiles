@@ -1,29 +1,12 @@
+#! /usr/bin/env zsh
 # Dotfiles
-if [ -d /Volumes/home ]; then
-  sudo dscl . -change Users/$(id -F)  NFSHomeDirectory /Users/$(id -F) /Volumes/home
-fi
-
-if [ ~/dotfiles ]; then
-  rm ~/.zshrc
-  mkdir ~/dotfiles/zfiles/rfy
-  touch ~/.zshrc.local
-  ln -s ~/dotfiles/.zshrc ~/.zshrc
-  ln -s ~/dotfiles/.zprofile ~/.zprofile
-  ln -s ~/dotfiles/zfiles ~/zfiles
-  source ~/.zshrc
-fi
-
-  source ~/.zshrc
 defaults delete com.apple.spaces
 defaults delete com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 
-if [ ! -d ~/.oh-my-zsh ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
+if [ -d /Volumes/home ]; then
+  sudo dscl . -change Users/$(id -F)  NFSHomeDirectory /Users/$(id -F) /Volumes/home
 fi
-
-ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
-ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
 
 if [ `uname` = 'Darwin' ] ; then
   for x in $(cat ~/dotfiles/zfiles/vscode/vscode.list); do code --install-extension $x; done
@@ -55,6 +38,22 @@ defaults import com.apple.systempreferences.plist ~/dotfiles/zfiles/macos/com.ap
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 
+if [ ~/dotfiles ]; then
+  rm ~/.zshrc
+  touch ~/dotfiles/zfiles/rfy
+  touch ~/.zshrc.local
+  ln -s ~/dotfiles/.zshrc ~/.zshrc
+  ln -s ~/dotfiles/.zprofile ~/.zprofile
+  ln -s ~/dotfiles/zfiles ~/zfiles
+fi
+
+if [ ! -d ~/.oh-my-zsh ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
+fi
+
+ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
+ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
+
 if [ -d /Volumes/vagrant ]; then
   mkdir /Volumes/vagrant/VirtualBox\ VMs
   mkdir /Volumes/vagrant/.vagrant.d
@@ -64,3 +63,5 @@ if [ -d /Volumes/vagrant ]; then
   cd kemerovo/larch
   vagrant up
 fi
+
+source ~/.zshrc
