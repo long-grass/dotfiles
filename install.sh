@@ -13,4 +13,4 @@ echo "gem: --no-document" > ~/.gemrc
 ~/.rbenv/shims/gem install bundler
 ~/.rbenv/shims/gem install rails
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
