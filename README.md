@@ -16,6 +16,7 @@ cd dotfiles
 To install packages and then link dotfiles
 
 ```
+./prepare.sh
 ./install.sh
 ./bootstrap.sh
 ```
@@ -25,8 +26,6 @@ To just link, without installing
 ```
 ./bootstrap.sh
 ```
-
-(note, this will install oh-my-zsh if it isn't present, but it won't clobber the dotfiles .zshrc) 
 
 # What it won't do
 

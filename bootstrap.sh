@@ -48,8 +48,8 @@ if [ -d /Volumes/vagrant ]; then
   mkdir /Volumes/vagrant/.vagrant.d
   ln -s /Volumes/vagrant/VirtualBox\ VMs /Volumes/home/VirtualBox\ VMs
   ln -s /Volumes/vagrant/.vagrant.d /Volumes/home/.vagrant.d
-  git clone https://github.com/cerico/kemerovo.git
-  cd kemerovo/larch
+  git clone https://github.com/cerico/kemerovo.git ~/kemerovo
+  cd ~/kemerovo/larch
   vagrant up
 fi
 
