@@ -43,13 +43,6 @@ if [ ~/dotfiles ]; then
   ln -s ~/dotfiles/zfiles ~/zfiles
 fi
 
-if [ ! -d ~/.oh-my-zsh ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
-fi
-
-ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
-ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
-
 if [ -d /Volumes/vagrant ]; then
   mkdir /Volumes/vagrant/VirtualBox\ VMs
   mkdir /Volumes/vagrant/.vagrant.d
@@ -59,5 +52,12 @@ if [ -d /Volumes/vagrant ]; then
   cd kemerovo/larch
   vagrant up
 fi
+
+if [ ! -d ~/.oh-my-zsh ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
+fi
+
+ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
+ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
 
 source ~/.zshrc
