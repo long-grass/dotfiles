@@ -43,12 +43,13 @@ if [ ~/dotfiles ]; then
 fi
 
 if [ -d /Volumes/vagrant ]; then
-  mkdir -p /Volumes/vagrant/$(id -F)/VirtualBox\ VMs
-  mkdir -p /Volumes/vagrant/$(id -F)/.vagrant.d
-  ln -s /Volumes/vagrant/$(id -F)/VirtualBox\ VMs /Volumes/home/$(id -F)/VirtualBox\ VMs
-  ln -s /Volumes/vagrant/$(id -F)/.vagrant.d /Volumes/home/$(id -F)/.vagrant.d
-  git clone https://github.com/cerico/kemerovo.git ~/kemerovo
-  cd ~/kemerovo/larch
+  VAGRANT_HOME=/Volumes/vagrant/$(id -F)/
+  mkdir -p /Volumes/vagrant/$VAGRANT_HOME/VirtualBox\ VMs
+  mkdir -p /Volumes/vagrant/$VAGRANT_HOME/.vagrant.d
+  ln -s /Volumes/vagrant/$VAGRANT_HOME/VirtualBox\ VMs /Volumes/home/$VAGRANT_HOME/VirtualBox\ VMs
+  ln -s /Volumes/vagrant/$VAGRANT_HOME/.vagrant.d /Volumes/home/$VAGRANT_HOME/.vagrant.d
+  git clone https://github.com/cerico/kemerovo.git $VAGRANT_HOME/kemerovo
+  cd $VAGRANT_HOME/kemerovo/larch
   vagrant up
 fi
 
