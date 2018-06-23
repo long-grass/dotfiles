@@ -1,7 +1,7 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew tap jotta/cli
-brew install caskroom/cask/brew-cask pow qt redis tree docker-compose postgresql jotta-cli docker-machine flux
+brew install caskroom/cask/brew-cask pow qt redis tree docker-compose postgresql jotta-cli docker-machine 
 brew cask install flux iterm2 vagrant vagrant-manager virtualbox virtualbox-extension-pack tunnelblick postman ableton-live-suite docker alfred google-chrome slack visual-studio-code firefox chrome-devtools
 rm -rf $(brew --cache)
 
