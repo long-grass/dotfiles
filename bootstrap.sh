@@ -35,7 +35,6 @@ defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 
 if [ ~/dotfiles ]; then
-  rm ~/.zshrc
   touch ~/dotfiles/zfiles/rfy
   touch ~/.zshrc.local
   ln -s ~/dotfiles/.zshrc ~/.zshrc
@@ -46,8 +45,8 @@ fi
 if [ -d /Volumes/vagrant ]; then
   mkdir -p /Volumes/vagrant/$(id -F)/VirtualBox\ VMs
   mkdir -p /Volumes/vagrant/$(id -F)/.vagrant.d
-  ln -s /Volumes/vagrant/VirtualBox\ VMs /Volumes/home/$(id -F)/VirtualBox\ VMs
-  ln -s /Volumes/vagrant/.vagrant.d /Volumes/home/$(id -F)/.vagrant.d
+  ln -s /Volumes/vagrant/$(id -F)/VirtualBox\ VMs /Volumes/home/$(id -F)/VirtualBox\ VMs
+  ln -s /Volumes/vagrant/$(id -F)/.vagrant.d /Volumes/home/$(id -F)/.vagrant.d
   git clone https://github.com/cerico/kemerovo.git ~/kemerovo
   cd ~/kemerovo/larch
   vagrant up
