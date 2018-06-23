@@ -44,8 +44,8 @@ if [ ~/dotfiles ]; then
 fi
 
 if [ -d /Volumes/vagrant ]; then
-  mkdir /Volumes/vagrant/$(id -F)/VirtualBox\ VMs
-  mkdir /Volumes/vagrant/$(id -F)/.vagrant.d
+  mkdir -p /Volumes/vagrant/$(id -F)/VirtualBox\ VMs
+  mkdir -p /Volumes/vagrant/$(id -F)/.vagrant.d
   ln -s /Volumes/vagrant/VirtualBox\ VMs /Volumes/home/$(id -F)/VirtualBox\ VMs
   ln -s /Volumes/vagrant/.vagrant.d /Volumes/home/$(id -F)/.vagrant.d
   git clone https://github.com/cerico/kemerovo.git ~/kemerovo
