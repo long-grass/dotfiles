@@ -8,8 +8,16 @@ alias spull="sudo git pull origin master"
 alias branches="branchdate | head -18"
 alias current_branch="git rev-parse --abbrev-ref HEAD"
 
-gitpush () {
- git pull origin "$current_branch"
+gcom () {
+  git diff master.."$current_branch" $1
+}
+
+gchanged () {
+  git diff --name-only $current_branch master
+}
+
+gpthis () {
+ git push origin "$current_branch"
 }
 
 gito () {
