@@ -35,12 +35,22 @@ defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 
 if [ ~/dotfiles ]; then
-  rm ~/.zshrc
   touch ~/dotfiles/zfiles/rfy
   touch ~/.zshrc.local
   ln -s ~/dotfiles/.zshrc ~/.zshrc
   ln -s ~/dotfiles/.zprofile ~/.zprofile
   ln -s ~/dotfiles/zfiles ~/zfiles
+fi
+
+if [ -d /Volumes/vagrant ]; then
+  VAGRANT_HOME=/Volumes/vagrant/$(id -F)
+  mkdir -p $VAGRANT_HOME/VirtualBox\ VMs
+  mkdir -p $VAGRANT_HOME/.vagrant.d
+  ln -s $VAGRANT_HOME/VirtualBox\ VMs /Volumes/home/$(id -F)/VirtualBox\ VMs
+  ln -s $VAGRANT_HOME/.vagrant.d /Volumes/home/$(id -F)/.vagrant.d
+  git clone https://github.com/cerico/kemerovo.git $VAGRANT_HOME/kemerovo
+  cd $VAGRANT_HOME/kemerovo/larch
+  vagrant up
 fi
 
 if [ ! -d ~/.oh-my-zsh ]; then
@@ -49,15 +59,5 @@ fi
 
 ln -s ~/dotfiles/zfiles/themes/meadow.zsh-theme ~/.oh-my-zsh/themes/meadow.zsh-theme
 ln -s ~/dotfiles/zfiles/themes/cloudier.zsh-theme ~/.oh-my-zsh/themes/cloudier.zsh-theme
-
-if [ -d /Volumes/vagrant ]; then
-  mkdir /Volumes/vagrant/VirtualBox\ VMs
-  mkdir /Volumes/vagrant/.vagrant.d
-  ln -s /Volumes/vagrant/VirtualBox\ VMs /Volumes/home/VirtualBox\ VMs
-  ln -s /Volumes/vagrant/.vagrant.d .Volumes/home/.vagrant.d
-  git clone https://github.com/cerico/kemerovo.git
-  cd kemerovo/larch
-  vagrant up
-fi
 
 source ~/.zshrc
