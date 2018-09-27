@@ -31,3 +31,4 @@ alias blog="open ./_posts/"
 alias cj="create-js-app"
 alias hyp="npm run hyperapp"
 alias m="make"
+alias sedi='sed -i "" -e'
