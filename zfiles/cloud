@@ -1,7 +1,7 @@
 mal() {
-  cpr islands
-  ssh root@malham.io
   cpr oak
+  ssh root@yesmat.es
+  cpr v
 }
 
 kem() {

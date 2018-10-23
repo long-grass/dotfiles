@@ -16,6 +16,7 @@ source ~/zfiles/rails
 source ~/zfiles/elixir
 source ~/zfiles/cloud
 source ~/zfiles/nginx
+source ~/zfiles/lets-encrypt
 source ~/zfiles/vscode/scripts
 source ~/zfiles/rfy
 

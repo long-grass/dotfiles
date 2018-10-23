@@ -16,6 +16,10 @@ gchanged () {
   git diff --name-only $current_branch master
 }
 
+diffs () {
+  git diff $current_branch master
+}
+
 gpthis () {
  git push origin "$current_branch"
 }
