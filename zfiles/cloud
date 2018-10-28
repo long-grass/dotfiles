@@ -4,6 +4,12 @@ mal() {
   cpr v
 }
 
+seaside() {
+  cpr oak
+  ssh root@138.68.106.181
+  cpr v
+}
+
 kem() {
   cpr stretch
   cd /Volumes/vagrant/kemerovo/larch
