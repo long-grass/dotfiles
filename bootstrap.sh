@@ -35,6 +35,7 @@ defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.
 defaults import com.apple.spaces.plist ~/dotfiles/zfiles/macos/com.apple.spaces.plist
 
 if [ ~/dotfiles ]; then
+  mv ~/.zshrc ~/.zshrc.orig
   touch ~/dotfiles/zfiles/rfy
   touch ~/.zshrc.local
   ln -s ~/dotfiles/.zshrc ~/.zshrc
