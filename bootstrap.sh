@@ -54,7 +54,7 @@ if [ -d /Volumes/vagrant ]; then
   vagrant up
 fi
 
-if [ ! -d ~/.oh-my-zsh ]; then
+if [ `uname` = 'Darwin' ] ; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/cerico/dotfiles/master/zfiles/oh-my-zsh/scripted-install.sh)"
 fi
 
