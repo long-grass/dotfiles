@@ -73,3 +73,4 @@ add-zsh-hook precmd set-window-title
 
 
 
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
