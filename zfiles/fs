@@ -13,6 +13,7 @@ cleanup(){
 
 tac() { tail -r -- "$@"; }
 
+ip() { ifconfig | grep en0 -A 2 | tail -1 | awk -F' ' '{print $2}' }
 
 timethis () {
   start_ms=$(ruby -e 'puts (Time.now.to_f * 1000).to_i')
