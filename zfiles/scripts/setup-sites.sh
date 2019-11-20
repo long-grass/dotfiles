@@ -6,5 +6,6 @@ echo "nameserver $ip" > /etc/resolver/test
 echo "address=/.test/$ip" > /usr/local/etc/dnsmasq.d/development.conf
 networksetup -setdnsservers Wi-Fi $ip 8.8.8.8
 sudo brew services restart dnsmasq
+sudo killall -HUP mDNSResponder
 curl http://hello.test
 
