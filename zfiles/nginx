@@ -1,3 +1,15 @@
 alias sns="service nginx start"
 alias snr="service nginx restart"
 alias ssrn="sudo systemctl reload nginx"
+
+redev(){
+  ip=$(ifconfig | grep en0 -A99 | grep -w inet -m 1| awk -F' ' '{print $2}')
+  echo "ip is now $ip"
+  echo "address=/.test/$ip" > /usr/local/etc/dnsmasq.d/development.conf
+  networksetup -setdnsservers Wi-Fi $ip 8.8.8.8
+  sudo brew services restart dnsmasq
+  sleep 3
+  sudo killall -HUP mDNSResponder
+  curl http://hello.test
+  open -n -a "Firefox" --args "--new-window" "http://hello.test/web"
+}
