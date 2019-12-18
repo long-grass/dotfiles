@@ -3,13 +3,45 @@ alias snr="service nginx restart"
 alias ssrn="sudo systemctl reload nginx"
 
 redev(){
-  ip=$(ifconfig | grep en0 -A99 | grep -w inet -m 1| awk -F' ' '{print $2}')
+   sudo cp /etc/hosts.orig /etc/hosts
+   if (( $# > 0 )); then
+    ip=127.0.0.1
+    files=/usr/local/etc/nginx/servers
+    cat /etc/hosts.orig > /tmp/hosts
+    for i in `ls $files | grep conf | awk -F '.conf' '{ print $1}'`
+      do 
+        echo 127.0.0.1 $i  >> /tmp/hosts
+        echo 127.0.0.1 www.$i  >> /tmp/hosts
+      done
+    sudo brew services stop dnsmasq
+    sudo cp -r /tmp/hosts /etc/hosts
+  else
+    ip=$(ifconfig | grep en0 -A99 | grep -w inet -m 1| awk -F' ' '{print $2}')
+    echo "address=/.test/$ip" > /usr/local/etc/dnsmasq.d/development.conf
+    networksetup -setdnsservers Wi-Fi $ip 8.8.8.8
+    sudo brew services restart dnsmasq
+  fi
   echo "ip is now $ip"
-  echo "address=/.test/$ip" > /usr/local/etc/dnsmasq.d/development.conf
-  networksetup -setdnsservers Wi-Fi $ip 8.8.8.8
-  sudo brew services restart dnsmasq
   sleep 3
   sudo killall -HUP mDNSResponder
+  sudo killall -9 dnsmasq
   curl http://hello.test
-  open -n -a "Firefox" --args "--new-window" "http://hello.test/web"
+  open -n -a "Firefox" --args "--new-window" "http://www.hello.test"
 }
+
+sites() {
+  orig=$(pwd)
+  cd ~/apps/production/list-my-sites && ./build.sh
+  cd $orig
+  open -n -a "Firefox" --args "--new-window" "http://www.sites.test"
+}
+
+roo(){
+  if (( $# > 0 )); then
+    ip=127.0.0.1
+  else
+    ip=$(ifconfig | grep en0 -A99 | grep -w inet -m 1| awk -F' ' '{print $2}')
+  fi
+  echo $ip
+}
+
