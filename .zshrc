@@ -71,6 +71,6 @@ add-zsh-hook precmd set-window-title
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
+# cd /Users/gareth/apps/rails-puma/ && puma -b unix:///Users/gareth/apps/rails-puma/tmp/sockets/puma.sock
 
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
