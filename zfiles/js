@@ -33,3 +33,7 @@ sc () {
 pa () {
   sed -n '/dependencies/,$p' package.json |more
 }
+
+newc () {
+  node ~/zfiles/files/index.js $1
+}

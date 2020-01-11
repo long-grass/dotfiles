@@ -12,6 +12,7 @@ redev(){
       do 
         echo 127.0.0.1 $i  >> /tmp/hosts
         echo 127.0.0.1 www.$i  >> /tmp/hosts
+        echo 127.0.0.1 dev.$i  >> /tmp/hosts
       done
     sudo brew services stop dnsmasq
     sudo cp -r /tmp/hosts /etc/hosts
@@ -22,11 +23,12 @@ redev(){
     sudo brew services restart dnsmasq
   fi
   echo "ip is now $ip"
-  sleep 3
-  sudo killall -HUP mDNSResponder
-  sudo killall -9 dnsmasq
-  curl http://hello.test
-  open -n -a "Firefox" --args "--new-window" "http://www.hello.test"
+  until $(curl --output /dev/null --silent --head --fail http://www.rentify.test); do
+    printf '.'
+    sudo killall -9 mDNSResponder; sudo killall -9 dnsmasq
+  done
+  curl http://www.rentify.test
+  open -n -a "Firefox" --args "--new-window" "http://www.rentify.test"
 }
 
 sites() {
