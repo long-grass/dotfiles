@@ -1,0 +1,12 @@
+nfy () {
+  netlify deploy --prod -d dist
+}
+
+serge  () {
+  jump create
+  ./bin/serge $1
+}
+react  () {
+  jump create
+  ./bin/react $1
+}

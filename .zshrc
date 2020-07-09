@@ -19,6 +19,7 @@ source ~/zfiles/nginx
 source ~/zfiles/lets-encrypt
 source ~/zfiles/vscode/scripts
 source ~/zfiles/rfy
+source ~/zfiles/netlify
 source ~/zfiles/pm2
 
 if [ `hostname -s` = 'kelso' ] ; then

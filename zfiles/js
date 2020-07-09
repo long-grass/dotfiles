@@ -9,9 +9,8 @@ alias nr="npm run rebuild"
 alias nt="npm test"
 
 newapp () {
-  mcd $1
-  git clone https://github.com/cerico/template.git .
-  npm install
+  cd ~/apps/production/create-cloud-app
+  ./bin/create $1
 }
 
 jsx () {
@@ -35,5 +34,5 @@ pa () {
 }
 
 newc () {
-  node ~/zfiles/files/index.js $1
+  node ~/zfiles/files/create.js $1
 }

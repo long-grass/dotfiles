@@ -1,6 +1,6 @@
 backupvsc () {
   if [ `uname` = 'Darwin' ] ; then
-    vs --list-extensions > ~/dotfiles/zfiles/vscodevscode.list
+    vs --list-extensions > ~/dotfiles/zfiles/vscode/vscode.list
   fi
 }
 
@@ -8,4 +8,16 @@ restorevsc () {
   if [ `uname` = 'Darwin' ] ; then
     for x in $(cat ~/dotfiles/zfiles/vscode/vscode.list); do code --install-extension $x; done
   fi
+}
+
+forest () {
+  cp ~/dotfiles/zfiles/vscode/styles/forest.json .vscode/settings.json
+}
+
+sea () {
+  cp ~/dotfiles/zfiles/vscode/styles/sea-green.json .vscode/settings.json
+}
+
+yellow  () {
+  cp ~/dotfiles/zfiles/vscode/styles/yellow-zombie.json .vscode/settings.json
 }

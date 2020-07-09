@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
 
 const ${string} = (props) => (
-  <div>{props.message}</div>
-)}
+  <div onClick={() => props.go(props.message)}>{props.message}</div>
+)
 
 const mapStateToProps = state => ({
   stuff: state,

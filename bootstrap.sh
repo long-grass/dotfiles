@@ -39,6 +39,7 @@ if [ ~/dotfiles ]; then
   touch ~/dotfiles/zfiles/rfy
   touch ~/.zshrc.local
   ln -s ~/dotfiles/.zshrc ~/.zshrc
+  ln -s ~/dotfiles/.pryrc ~/.pryrc
   ln -s ~/dotfiles/.zprofile ~/.zprofile
   ln -s ~/dotfiles/zfiles ~/zfiles
 fi

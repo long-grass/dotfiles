@@ -11,6 +11,10 @@ psgr () {
   bundle exec passenger start -p $1
 }
 
+jobs () {
+  cd ~/rentify && bin/rake jobs:clear && bin/rake jobs:work
+}
+
 logify () {
   cpr logging
   jump main

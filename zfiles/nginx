@@ -12,7 +12,9 @@ redev(){
       do 
         echo 127.0.0.1 $i  >> /tmp/hosts
         echo 127.0.0.1 www.$i  >> /tmp/hosts
+        echo 127.0.0.1 admin.$i  >> /tmp/hosts
         echo 127.0.0.1 dev.$i  >> /tmp/hosts
+        echo 127.0.0.1 api.$i  >> /tmp/hosts
       done
     sudo brew services stop dnsmasq
     sudo cp -r /tmp/hosts /etc/hosts
