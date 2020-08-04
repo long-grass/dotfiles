@@ -5,7 +5,10 @@ nfy () {
 serge  () {
   jump create
   ./bin/serge $1
+  jump dev
+  cd $1
 }
+
 react  () {
   jump create
   ./bin/react $1
