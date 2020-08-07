@@ -13,6 +13,14 @@ newapp () {
   ./bin/create $1
 }
 
+indexjs () {
+  for i in $(find . -name '*.js'); do mkdir ${i/.js/}; mv $i ${i/.js/}/index.js; done
+}
+
+nojsx () {
+  for i in $(find . -name '*.jsx'); do mv $i ${i/jsx/js}; done
+}
+
 jsx () {
   for i in *.jsx
     do mv  $i `ls $i |awk -F  'x' '{print $1}'`
