@@ -11,13 +11,16 @@ restorevsc () {
 }
 
 forest () {
+  mkdir -p .vscode
   cp ~/dotfiles/zfiles/vscode/styles/forest.json .vscode/settings.json
 }
 
 sea () {
+  mkdir -p .vscode
   cp ~/dotfiles/zfiles/vscode/styles/sea-green.json .vscode/settings.json
 }
 
 yellow  () {
+  mkdir -p .vscode
   cp ~/dotfiles/zfiles/vscode/styles/yellow-zombie.json .vscode/settings.json
 }

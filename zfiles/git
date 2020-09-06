@@ -20,6 +20,17 @@ diffs () {
   git diff $current_branch master
 }
 
+create-branches-from-commits() {
+  j=1
+  for i in `git log --reverse | grep commit | awk -F' ' '{print $2}'`
+    do
+      commit=$(git log --format=%B -n 1 $i | xargs | tr -s '[:blank:]:/()*!?&£' '-')
+      name="$(( j++))-$commit"
+      git checkout $i
+      git branch $name
+    done
+}
+
 gpthis () {
  git push origin "$current_branch"
 }

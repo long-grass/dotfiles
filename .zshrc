@@ -21,6 +21,8 @@ source ~/zfiles/vscode/scripts
 source ~/zfiles/rfy
 source ~/zfiles/netlify
 source ~/zfiles/pm2
+source ~/zfiles/tokens
+
 
 if [ `hostname -s` = 'kelso' ] ; then
   ZSH_THEME="cloud"

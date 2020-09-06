@@ -14,7 +14,7 @@ newapp () {
 }
 
 indexjs () {
-  for i in $(find . -name '*.js'); do mkdir ${i/.js/}; mv $i ${i/.js/}/index.js; done
+  for i in $(find . -name '*.js' ! -name 'index.js'); do mkdir ${i/.js/}; mv $i ${i/.js/}/index.js; done
 }
 
 nojsx () {
